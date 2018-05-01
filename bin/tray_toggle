@@ -1,0 +1,10 @@
+#!/bin/sh
+
+PID=$(pidof stalonetray)
+
+if [ -n "$PID" ]
+  then 
+    killall stalonetray
+  else
+    stalonetray &
+fi

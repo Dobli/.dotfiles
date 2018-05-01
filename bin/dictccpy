@@ -1,0 +1,5 @@
+#!/bin/bash
+
+python_output=($(python2 ~/.i3/scripts/dictmenu.py | tr -d '[],'))
+# echo $python_output
+echo $python_output

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ -f $HOME/.dmenurc ]; then
+  . $HOME/.dmenurc
+  DMENU="dmenu $DMENU_OPTIONS"
+else
+  DMENU='dmenu -i'
+fi
+
+text="$(xsel -o | $DMENU -p "")"
+if [ "$text" != '' ]
+then
+  yaourt -Ss -q "$text" | $DMENU -p "" | xsel -i -b
+fi

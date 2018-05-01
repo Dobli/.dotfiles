@@ -1,0 +1,55 @@
+# Shadow
+shadow = true;
+menu-opacity = 1.0;
+no-dock-shadow = false;
+shadow-radius = 7;
+shadow-offset-x = 0;
+shadow-offset-y = 0;
+shadow-opacity = .4;
+shadow-ignore-shaped = false;
+shadow-exclude = [
+    "name = 'stalonetray'",
+	# "name = 'Notification'", 
+# workaround for conky until it provides window properties:
+	# "override_redirect = 1 && !WM_CLASS@:s", 
+#	"class_g ?= 'Dunst'", 
+# disable shadows for hidden windows:
+	"_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'",
+	"_GTK_FRAME_EXTENTS@:c",
+# disables shadows on sticky windows:
+#	"_NET_WM_STATE@:32a *= '_NET_WM_STATE_STICKY'",
+# disables shadows on i3 frames
+	"class_g ?= 'i3-frame'",
+	"class_g ?= 'peek'",
+# disable shadows on gnome-screenshot
+	"class_g ?= 'gnome-screenshot'"
+
+];
+frame-opacity = 1.0;
+detect-rounded-corners = true;
+blur-background-fixed = false;
+fade-delta = 5.0;
+clear-shadow = false;
+no-fading-openclose = false;
+inactive-opacity-override = false;
+inactive-opacity = 1.0;
+mark-wmwin-focused = true;
+fading = true;
+
+wintypes : 
+{
+  tooltip : 
+  {
+    fade = true;
+    shadow = false;
+    opacity = 0.85;
+    focus = true;
+  };
+  fullscreen : 
+  {
+    fade = true;
+    shadow = false;
+    opacity = 1;
+    focus = true;
+  };
+};

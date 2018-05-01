@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+text="$(ls $PROJECT_HOME | rofi -dmenu -p " ")"
+if [ "$text" != '' ]
+then
+   -c 'workon $text && vim'
+fi

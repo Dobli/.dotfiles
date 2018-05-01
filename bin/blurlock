@@ -1,0 +1,14 @@
+#!/bin/bash
+# /usr/bin/blurlock
+
+# take screenshot
+import -window root /tmp/screenshot.png
+
+# blur it
+convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png
+rm /tmp/screenshot.png
+
+# lock the screen
+i3lock --insidevercolor=99cc99ff --insidewrongcolor=fb9fb1ff --insidecolor=6fc2efff --ringvercolor=99cc99ff --ringwrongcolor=f2777aff --ringcolor=6699ccff --textcolor=505050ff --timecolor=505050ff --datecolor=505050ff --separatorcolor=aaaaaaaa --keyhlcolor=303030ff --bshlcolor=606060ff --radius=100 --indicator -t -k -r -i /tmp/screenshotblur.png
+
+exit 0

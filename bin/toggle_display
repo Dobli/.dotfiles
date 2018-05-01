@@ -1,0 +1,31 @@
+#!/bin/sh
+
+SCRLF=$HOME/.i3/screenlayout
+TOGGLE=$SCRLF/.toggle
+echo $TOGGLE
+if [ ! -e $TOGGLE ]; then
+	echo "Create toggle file"
+	touch $TOGGLE
+	sh $SCRLF/display_extended
+	echo "e" > $TOGGLE
+else
+	MODE=$(cat $TOGGLE)
+	case $MODE in
+		e) echo "extended -> switch to mirror"
+		sh $SCRLF/display_mirror
+		echo "m" > $TOGGLE
+		;;
+		m) echo "mirror -> switch to off"
+		sh $SCRLF/display_off
+		echo "o" > $TOGGLE
+		;;
+		o) echo "off -> switch to extended"
+		sh $SCRLF/display_extended
+		echo "e" > $TOGGLE
+		;;
+		*) echo "unknown -> switch to extended"
+		sh $SCRLF/display_extended
+		echo "e" > $TOGGLE
+		;;
+	esac
+fi
