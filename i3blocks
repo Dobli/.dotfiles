@@ -35,6 +35,12 @@ command=ncmpcpp --current-song | awk '{$1=""; print}'
 #color=#a7664a
 interval=10
 
+# pomodoro
+[pomodoro]
+label=
+command=i3b_pomodoro
+interval=1
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)

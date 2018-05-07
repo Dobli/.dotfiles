@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SCRLF=$HOME/.i3/screenlayout
+SCRLF=$HOME/.dotfiles/bin
 TOGGLE=$SCRLF/.toggle
 echo $TOGGLE
 if [ ! -e $TOGGLE ]; then
