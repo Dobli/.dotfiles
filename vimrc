@@ -46,6 +46,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'majutsushi/tagbar'
 Plugin 'rakr/vim-one'
 Plugin 'pangloss/vim-javascript'
+Plugin 'reedes/vim-colors-pencil'
 " --- END PLUGINS --- 
 call vundle#end()
 filetype plugin indent on
@@ -123,7 +124,7 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
-colorscheme base16-eighties
+colorscheme pencil
 "let g:molokai_original = 1
 "let g:rehash256 = 1
 " show line numbers
@@ -198,7 +199,7 @@ let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=1
 " vim-airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16_eighties'
+let g:airline_theme='pencil'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
