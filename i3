@@ -4,7 +4,6 @@
 #  ttf-font-awesome (aur)
 #  stalonetray
 
-
 #gaps 
 for_window [class="^.*"] border pixel 0
 gaps inner 14
@@ -13,7 +12,24 @@ gaps inner 14
 #mouse focus
 focus_follows_mouse yes
 
-# Colors
+# Colors {{{
+# Define Xresource colors
+set_from_resource $darkred     color1  #000000
+set_from_resource $darkgreen   color2  #000000
+set_from_resource $darkyellow  color3  #000000
+set_from_resource $darkblue    color4  #000000
+set_from_resource $darkmagenta color5  #000000
+set_from_resource $darkcyan    color6  #000000
+set_from_resource $darkwhite   color7  #000000
+set_from_resource $black       color8  #000000
+set_from_resource $red         color9  #000000
+set_from_resource $green       color10 #000000
+set_from_resource $yellow      color11 #000000
+set_from_resource $blue        color12 #000000
+set_from_resource $magenta     color13 #000000
+set_from_resource $cyan        color14 #000000
+set_from_resource $white       color15 #000000
+
 set $border-color #2d2d2d
 set $bg-color #ffcc66
 set $text-color #393939
@@ -34,7 +50,9 @@ client.unfocused        $border-color   $in-bg-color       $in-text-color       
 client.focused_inactive $border-color   $in-bg-color       $in-text-color       $indicator-color
 client.urgent           $border-color   $signal-bg-color   $signal-text-color   $indicator-color
 
-# Workspaces
+# }}}
+
+# Workspaces {{{
 set $ws1 "1  Web"
 set $ws2 "2  Terminal"
 set $ws3 "3  E-Mail"
@@ -45,6 +63,8 @@ set $ws7 "7  Other"
 set $ws8 "8  Chat"
 set $ws9 "9  Music"
 set $ws10 "10  Status"
+
+# }}}
 
 #thin borders
 hide_edge_borders both
@@ -295,3 +315,6 @@ for_window [class="Nextcloud"] floating disable
 for_window [class="mpv"] floating enable; 
 for_window [class="mpv"] resize set 560 315;
 for_window [class="mpv"] sticky enable;
+
+# --- vim settings ---
+# vim:foldmethod=marker:foldlevel=0

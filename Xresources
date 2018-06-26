@@ -108,7 +108,7 @@ XTerm*selectToClipboard: true
 ! ------------------------------------------------------------------------------
 ! URxvt Settings
 ! ------------------------------------------------------------------------------
-URxvt*font: xft:Liberation\ Mono\ for\ Powerline:size=11
+URxvt*font: xft:Source Code Pro Medium:size=12
 URxvt.depth: 32
 URxvt.background: [100]base00
 URxvt.foreground: base05
@@ -133,7 +133,7 @@ rofi.color-normal: base00, base05, base00, base0D, base00
 rofi.color-active: base00, base05, base00, base0D, base00
 rofi.color-urgent: base00, base08, base00, base08, base00
 rofi.lines: 7
-rofi.font: Liberation\ Mono\ 16
+! rofi.font: Source Code Pro Medium 16
 rofi.bw: 0
 rofi.padding: 6
 rofi.hide-scrollbar: true

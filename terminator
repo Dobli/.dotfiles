@@ -19,11 +19,15 @@
       type = Window
 [plugins]
 [profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    font = Source Code Pro for Powerline 12
+    use_system_font = False
   [[dark]]
     background_color = "#2d2d2d"
     cursor_color = "#d3d0c8"
     exit_action = hold
-    font = Source Code Pro Medium 12
+    font = Source Code Pro for Powerline Medium 12
     foreground_color = "#f2f0ec"
     palette = "#2d2d2d:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#e8e6df:#747369:#f99157:#99cc99:#d27b53:#6699cc:#cc99cc:#66cccc:#f2f0ec"
     scrollback_lines = 5000
