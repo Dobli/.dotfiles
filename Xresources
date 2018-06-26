@@ -10,22 +10,39 @@
 ! ------------------------------------------------------------------------------
 
 ! Base16 Eighties
-#define base00 #2d2d2d
-#define base01 #393939
-#define base02 #515151
-#define base03 #747369
-#define base04 #a09f93
-#define base05 #d3d0c8
-#define base06 #e8e6df
-#define base07 #f2f0ec
-#define base08 #f2777a
-#define base09 #f99157
-#define base0A #ffcc66
-#define base0B #99cc99
-#define base0C #66cccc
-#define base0D #6699cc
-#define base0E #cc99cc
-#define base0F #d27b53
+! #define base00 #2d2d2d
+! #define base01 #393939
+! #define base02 #515151
+! #define base03 #747369
+! #define base04 #a09f93
+! #define base05 #d3d0c8
+! #define base06 #e8e6df
+! #define base07 #f2f0ec
+! #define base08 #f2777a
+! #define base09 #f99157
+! #define base0A #ffcc66
+! #define base0B #99cc99
+! #define base0C #66cccc
+! #define base0D #6699cc
+! #define base0E #cc99cc
+! #define base0F #d27b53
+! Base16 Tomorrow (Light)
+#define base00 #ffffff
+#define base01 #e0e0e0
+#define base02 #d6d6d6
+#define base03 #8e908c
+#define base04 #969896
+#define base05 #4d4d4c
+#define base06 #282a2e
+#define base07 #1d1f21
+#define base08 #c82829
+#define base09 #f5871f
+#define base0A #c79f00
+#define base0B #718c00
+#define base0C #3e999f
+#define base0D #4271ae
+#define base0E #8959a8
+#define base0F #a3685a
 
 *pointerColorBackground:#2B2C2B
 *pointerColorForeground:#16A085
@@ -45,6 +62,7 @@
 *.color5:       base0E
 *.color6:       base0C
 *.color7:       base05
+
 *.color8:       base03
 *.color9:       base08
 *.color10:      base0B
@@ -53,6 +71,13 @@
 *.color13:      base0E
 *.color14:      base0C
 *.color15:      base07
+
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06
 
 ! ------------------------------------------------------------------------------
 ! Font Settings
@@ -74,8 +99,8 @@ Xcursor.size:  0
 ! ------------------------------------------------------------------------------
 ! Xterm Settings
 ! ------------------------------------------------------------------------------
-XTerm*background: #2d2d2d
-XTerm*foreground: #d3d0c8
+XTerm*background: base00
+XTerm*foreground: base05
 XTerm*reverseVideo: on
 XTerm*faceName: Terminus:size=11:antialias=true
 XTerm*selectToClipboard: true
@@ -85,12 +110,13 @@ XTerm*selectToClipboard: true
 ! ------------------------------------------------------------------------------
 URxvt*font: xft:Liberation\ Mono\ for\ Powerline:size=11
 URxvt.depth: 32
-URxvt.background: [100]#2d2d2d
+URxvt.background: [100]base00
+URxvt.foreground: base05
 URxvt*scrollBar:                      false
 URxvt*mouseWheelScrollPage:           false
 URxvt*cursorBlink:                    true
-URxvt*background:                     black
-URxvt*foreground:                     grey
+! URxvt*background:                     black
+! URxvt*foreground:                     grey
 URxvt*saveLines:                      5000
 URxvt.perl-ext-common: ...,clipboard
 URxvt.keysym.C-C:   perl:clipboard:copy
@@ -102,10 +128,10 @@ URxvt.iso14755 : false
 ! ROFI Settings
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: #2d2d2d, #2d2d2d, #2d2d2d
-rofi.color-normal: #2d2d2d, #a09f93, #2d2d2d, #99cc99, #393939
-rofi.color-active: #2d2d2d, #a09f93, #2d2d2d, #99cc99, #393939
-rofi.color-urgent: #2d2d2d, #f2777a, #2d2d2d, #f2777a, #393939
+rofi.color-window: base00, base00, base00
+rofi.color-normal: base00, base05, base00, base0D, base00
+rofi.color-active: base00, base05, base00, base0D, base00
+rofi.color-urgent: base00, base08, base00, base08, base00
 rofi.lines: 7
 rofi.font: Liberation\ Mono\ 16
 rofi.bw: 0

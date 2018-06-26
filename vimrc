@@ -47,7 +47,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'rakr/vim-one'
 Plugin 'pangloss/vim-javascript'
 Plugin 'reedes/vim-colors-pencil'
-" --- END PLUGINS --- 
+" --- END PLUGINS ---
 call vundle#end()
 filetype plugin indent on
 " }}}
@@ -124,7 +124,10 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
-colorscheme pencil
+let base16colorspace=256
+set t_Co=256
+set background=light
+colorscheme base16-tomorrow
 "let g:molokai_original = 1
 "let g:rehash256 = 1
 " show line numbers
@@ -132,7 +135,7 @@ set number
 " show last command
 set showcmd
 " show tab menu for completition
-set wildchar=<Tab> 
+set wildchar=<Tab>
 set wildmode=full:list
 set wildmenu
 " let vim redraw less e.g. for macros
@@ -215,12 +218,12 @@ let g:formatters_python = ['yapf']
 " vim-isort
 let g:vim_isort_python_version = 'python3'
 " ycm
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1 
+let g:ycm_complete_in_strings = 1
 " ListToggle
 let g:lt_location_list_toggle_map = '<leader>ll'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
@@ -317,3 +320,4 @@ EOF
 
 " --- vim.rc settings ---
 " vim:foldmethod=marker:foldlevel=0
+
