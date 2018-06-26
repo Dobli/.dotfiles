@@ -35,14 +35,18 @@ echo $QUALITY% # full text
 echo $QUALITY% # short text
 
 # color
+fg_volor=$(xrdb -query | grep '*color5'| awk '{print $NF}') 
+fg_volor2=$(xrdb -query | grep '*color9'| awk '{print $NF}') 
+fg_volor3=$(xrdb -query | grep '*color16'| awk '{print $NF}') 
+fg_volor4=$(xrdb -query | grep '*color11'| awk '{print $NF}') 
 if [[ $QUALITY -ge 80 ]]; then
-    echo "#d3d8c0"
+    echo "$fg_color"
 elif [[ $QUALITY -lt 80 ]]; then
-    echo "#d3d8c0"
+    echo "$fg_color3"
 elif [[ $QUALITY -lt 60 ]]; then
-    echo "#d3d8c0"
+    echo "$fg_color4"
 elif [[ $QUALITY -lt 40 ]]; then
-    echo "#FFCC66"
+    echo "$fg_color2"
 fi
 
 #------------------------------------------------------------------------

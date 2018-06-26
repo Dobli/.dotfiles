@@ -4,31 +4,44 @@
 #  ttf-font-awesome (aur)
 #  stalonetray
 
+#  ----- Window settings {{{
 #gaps 
 for_window [class="^.*"] border pixel 0
 gaps inner 14
 #smart_gaps on
 
-#mouse focus
-focus_follows_mouse yes
+#thin borders
+hide_edge_borders both
 
-# Colors {{{
+#Window float preferences
+for_window [class="Nextcloud"] floating disable
+for_window [class="mpv"] floating enable; 
+for_window [class="mpv"] resize set 560 315;
+for_window [class="mpv"] sticky enable;
+# }}}
+
+#  ----- Theming {{{
+# Font
+font pango:FontAwesome, Liberation Mono 11
+
 # Define Xresource colors
-set_from_resource $darkred     color1  #000000
-set_from_resource $darkgreen   color2  #000000
-set_from_resource $darkyellow  color3  #000000
-set_from_resource $darkblue    color4  #000000
-set_from_resource $darkmagenta color5  #000000
-set_from_resource $darkcyan    color6  #000000
-set_from_resource $darkwhite   color7  #000000
-set_from_resource $black       color8  #000000
-set_from_resource $red         color9  #000000
-set_from_resource $green       color10 #000000
-set_from_resource $yellow      color11 #000000
-set_from_resource $blue        color12 #000000
-set_from_resource $magenta     color13 #000000
-set_from_resource $cyan        color14 #000000
-set_from_resource $white       color15 #000000
+set_from_resource $background  background #000000
+set_from_resource $background2 color18    #000000
+set_from_resource $background3 color19    #000000
+set_from_resource $background4 color8     #000000
+set_from_resource $foreground  foreground #000000
+set_from_resource $foreground2 color20    #000000
+set_from_resource $foreground3 color21    #000000
+set_from_resource $foreground4 color15    #000000
+
+set_from_resource $red         color9     #000000
+set_from_resource $orange      color16    #000000
+set_from_resource $yellow      color11    #000000
+set_from_resource $green       color10    #000000
+set_from_resource $cyan        color14    #000000
+set_from_resource $blue        color12    #000000
+set_from_resource $magenta     color13    #000000
+set_from_resource $brown       color17    #000000
 
 set $border-color #2d2d2d
 set $bg-color #ffcc66
@@ -40,19 +53,18 @@ set $signal-text-color #3d3d3d
 set $indicator-color #DF293E
 
 ## Bar colors
-set $bar-bg-color #2d2d2d
+set $bar-bg-color $black
 set $bar-text-color #e8e6df
 
 # Window colors
 #                       border          background         text                 indicator
-client.focused          $border-color   $bg-color          $text-color          $indicator-color
-client.unfocused        $border-color   $in-bg-color       $in-text-color       $indicator-color
-client.focused_inactive $border-color   $in-bg-color       $in-text-color       $indicator-color
-client.urgent           $border-color   $signal-bg-color   $signal-text-color   $indicator-color
-
+client.focused          $blue           $blue              $background          $red
+client.unfocused        $background     $background        $foreground          $red
+client.focused_inactive $cyan           $cyan              $background          $red
+client.urgent           $background     $signal-bg-color   $signal-text-color   $red
 # }}}
 
-# Workspaces {{{
+#  ----- Workspaces {{{
 set $ws1 "1  Web"
 set $ws2 "2  Terminal"
 set $ws3 "3  E-Mail"
@@ -64,16 +76,24 @@ set $ws8 "8  Chat"
 set $ws9 "9  Music"
 set $ws10 "10  Status"
 
+# assign workspaces to outputs
+workspace $ws1 output DP-1
+workspace $ws3 output DVI-I-1
+
+# Assign applications to workspaces
+assign [class="Firefox"] $ws1
+assign [class="Evolution"] $ws3
+assign [class="jetbrains-studio"] $ws5
+assign [class="jetbrains-idea-ce"] $ws5
+assign [class="Nextcloud"] $ws10
 # }}}
 
-#thin borders
-hide_edge_borders both
+#  ----- Keybindings {{{
+#mouse focus
+focus_follows_mouse yes
 
 # Hotkey
 set $mod Mod4
-
-# Font
-font pango:FontAwesome, Liberation Mono 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -193,7 +213,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# }}}
 
+#  ----- Modes {{{
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -217,9 +239,10 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
+# }}}
 
+#  ----- Statusbars {{{
 # Top bar
 bar {
 	height 35
@@ -231,29 +254,20 @@ bar {
 	font pango:FontAwesome, Liberation Mono 11 
 	position top
 	colors {
-                background $bar-bg-color
-                separator $bar-bg-color
-                #                  border             background         text
-                focused_workspace  $bar-bg-color      $bar-bg-color      $bar-text-color
-                inactive_workspace $bar-bg-color      $bar-bg-color  	 $in-text-color
-                urgent_workspace   $signal-bg-color   $signal-bg-color   $signal-text-color
+                background $background
+                separator $background
+                #                  border            background        text
+                focused_workspace  $blue             $blue             $background
+                active_workspace   $cyan             $cyan             $background
+                inactive_workspace $background       $background       $foreground
+                urgent_workspace   $red              $red              $background
         }
 }
- 
- #assign workspaces to outputs
-workspace $ws1 output DP-1
-workspace $ws3 output DVI-I-1
+# }}}
 
-#Assign applications to workspaces
-assign [class="Firefox"] $ws1
-assign [class="Evolution"] $ws3
-assign [class="jetbrains-studio"] $ws5
-assign [class="jetbrains-idea-ce"] $ws5
-assign [class="Nextcloud"] $ws10
+# ----- Additional shortcuts {{{
 
-# ----- Additional shortcuts -----
-
-#Lockscreen
+# Lockscreen
 bindsym $mod+X exec blurlock
 
 # Pulse Audio controls
@@ -268,24 +282,11 @@ bindsym $mod+shift+o exec movesinks 1
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
-#MPD Controls with clerk
+# MPD Controls with clerk
 bindsym $mod+c exec clerk
 
 # Toggle tray
 bindsym $mod+t exec --no-startup-id tray_toggle
-
-#Synapitc Touchpad controls
-#bindsym XF86TouchpadToggle exec
-#/some/path/toggletouchpad.sh # toggle touchpad
-#exec --no-startup-id synclient TapButton1=1
-#exec --no-startup-id synclient TapButton2=3
-#exec --no-startup-id synclient TapButton3=2
-#exec --no-startup-id synclient ClickButton2=3
-#exec --no-startup-id synclient ClickButton3=2
-#exec --no-startup-id synclient HorizTwoFingerScroll=1
-
-# Libinput touchpad controls
-exec --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
 
 # External Display Toggle
 bindsym $mod+p exec --no-startup-id toggle_display
@@ -296,8 +297,9 @@ bindsym $mod+p exec --no-startup-id toggle_display
 bindsym Print exec --no-startup-id scrot
 bindsym $mod+Print --release exec --no-startup-id scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id scrot -s
+# }}}
 
-# Autostart
+#----- Autostart {{{
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id display_layout_default
 exec --no-startup-id nitrogen --restore; sleep 1; compton -f -b
@@ -307,14 +309,12 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id pulseaudio
 exec --no-startup-id pa-applet
 #exec --no-startup-id xautolock -time 10 -locker blurlock
-# exec --no-startup-id nextcloud
 exec --no-startup-id sleep 1; blurlock; nextcloud
 
-#Window float preferences
-for_window [class="Nextcloud"] floating disable
-for_window [class="mpv"] floating enable; 
-for_window [class="mpv"] resize set 560 315;
-for_window [class="mpv"] sticky enable;
+# Libinput touchpad controls
+exec --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
+# }}}
+
 
 # --- vim settings ---
-# vim:foldmethod=marker:foldlevel=0
+# vim:foldmethod=marker:foldlevel=0:filetype=i3

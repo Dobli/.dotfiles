@@ -47,6 +47,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'rakr/vim-one'
 Plugin 'pangloss/vim-javascript'
 Plugin 'reedes/vim-colors-pencil'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 " --- END PLUGINS ---
 call vundle#end()
 filetype plugin indent on
