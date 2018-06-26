@@ -320,4 +320,3 @@ EOF
 
 " --- vim.rc settings ---
 " vim:foldmethod=marker:foldlevel=0
-
