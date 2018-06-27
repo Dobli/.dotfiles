@@ -22,7 +22,7 @@ for_window [class="mpv"] sticky enable;
 
 #  ----- Theming {{{
 # Font
-font pango:FontAwesome, Liberation Mono 11
+font pango:SourceCodeProMedium, FontAwesome5Free, FontAwesome5Brands 11
 
 # Define Xresource colors
 set_from_resource $background  background #000000
@@ -251,7 +251,7 @@ bar {
         i3bar_command i3bar 
         status_command i3blocks
 
-	font pango:FontAwesome, Liberation Mono 11 
+	font pango:SourceCodeProMedium, FontAwesome5Free, FontAwesome5Brands 11
 	position top
 	colors {
                 background $background
