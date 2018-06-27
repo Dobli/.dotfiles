@@ -48,6 +48,8 @@ Plugin 'rakr/vim-one'
 Plugin 'pangloss/vim-javascript'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'lervag/vimtex'
+Plugin 'junegunn/goyo.vim'
 " --- END PLUGINS ---
 call vundle#end()
 filetype plugin indent on
@@ -235,6 +237,8 @@ let g:UltiSnipsListSnippets= "<leader>sp"
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'htmldjango' : 1 }
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
+" goyo.vim (fix color bug)
+autocmd! User GoyoLeave nested set bg=dark | colo base16-one-light
 " }}}
 
 " --- FILETYPE SETTINGS {{{
