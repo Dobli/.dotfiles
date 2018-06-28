@@ -43,6 +43,7 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'chriskempson/base16-vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'majutsushi/tagbar'
 Plugin 'rakr/vim-one'
 Plugin 'pangloss/vim-javascript'
@@ -50,6 +51,7 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'lervag/vimtex'
 Plugin 'junegunn/goyo.vim'
+Plugin 'tweekmonster/spellrotate.vim'
 " --- END PLUGINS ---
 call vundle#end()
 filetype plugin indent on
@@ -71,6 +73,9 @@ set modelines=1
 set mouse=a
 " allow to hide unsaved buffers
 set hidden
+" set global spellcheck file
+set spellfile=$HOME/.dotfiles/.vimspell.utf-8.add
+set complete+=kspell
 " }}}
 
 " --- KEY BINDINGS {{{
@@ -119,6 +124,13 @@ vnoremap <leader>a= :Tabularize /=<CR>
 nnoremap <leader>a: :Tabularize /:\zs<CR>
 vnoremap <leader>a: :Tabularize /:\zs<CR>
 autocmd FileType markdown inoremap <silent> <Bar> <Bar><Esc>:call <SID>align()<CR>a
+" Goyo Toggle
+nnoremap <leader>g :Goyo<CR>
+" spellrotate commands
+nmap <silent> zz <Plug>(SpellRotateForward)
+nmap <silent> ZZ <Plug>(SpellRotateBackward)
+vmap <silent> zz <Plug>(SpellRotateForwardV)
+vmap <silent> ZZ <Plug>(SpellRotateBackwardV)
 " }}}
 
 "  --- UI CONFIG {{{
@@ -237,8 +249,17 @@ let g:UltiSnipsListSnippets= "<leader>sp"
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'htmldjango' : 1 }
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
+" vimtex
+let g:vimtex_view_method = 'zathura'
 " goyo.vim (fix color bug)
 autocmd! User GoyoLeave nested set bg=dark | colo base16-one-light
+" unimpared.vim
+nmap > [
+nmap < ]
+omap > [
+omap < ]
+xmap > [
+xmap < ]
 " }}}
 
 " --- FILETYPE SETTINGS {{{
@@ -272,6 +293,9 @@ au BufNewFile,BufRead models.py    setlocal filetype=python.django
 au BufNewFile,BufRead views.py     setlocal filetype=python.django
 au BufNewFile,BufRead settings.py  setlocal filetype=python.django
 au BufNewFile,BufRead forms.py     setlocal filetype=python.django
+" spell check for markdown and latex files
+au BufNewFile,BufRead,BufEnter   *.md   setlocal spell spelllang=en_gb
+au BufNewFile,BufRead,BufEnter   *.tex  setlocal spell spelllang=en_gb
 " }}}
 
 " --- CUSTOM FUNCTIONS {{{
