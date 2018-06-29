@@ -333,6 +333,13 @@ function! s:align()
   endif
 endfunction
 
+" rebuild spell file if it changed
+for d in glob('~/.dotfiles/.vimspell.utf-8.add', 1, 1)
+    if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
+        exec 'mkspell! ' . fnameescape(d)
+    endif
+endfor
+
 "python with virtualenv support
 py << EOF
 import os
