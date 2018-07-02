@@ -251,6 +251,16 @@ let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'htmldj
 let g:javascript_plugin_jsdoc = 1
 " vimtex
 let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-pdflatex="xelatex --shell-escape %O %S"',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ]
+    \}
 " goyo.vim (fix color bug)
 autocmd! User GoyoLeave nested set bg=dark | colo base16-one-light
 " unimpared.vim
