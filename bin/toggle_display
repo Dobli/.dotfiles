@@ -28,4 +28,5 @@ else
 		echo "e" > $TOGGLE
 		;;
 	esac
+    nitrogen --restore
 fi
