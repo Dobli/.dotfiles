@@ -306,7 +306,7 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -f -b
 exec --no-startup-id evolution
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
-exec --no-startup-id pulseaudio
+exec --no-startup-id pulseaudio --start
 exec --no-startup-id pa-applet
 #exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id sleep 1; blurlock; nextcloud
