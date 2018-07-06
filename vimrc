@@ -52,6 +52,8 @@ Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'lervag/vimtex'
 Plugin 'junegunn/goyo.vim'
 Plugin 'tweekmonster/spellrotate.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 " --- END PLUGINS ---
 call vundle#end()
 filetype plugin indent on
@@ -131,6 +133,13 @@ nmap <silent> zz <Plug>(SpellRotateForward)
 nmap <silent> ZZ <Plug>(SpellRotateBackward)
 vmap <silent> zz <Plug>(SpellRotateForwardV)
 vmap <silent> ZZ <Plug>(SpellRotateBackwardV)
+" SearchNotes
+" Make the C-] combination search for @tags:
+imap <C-,>ns :SearchNotes<CR>
+nmap <leader>ns :SearchNotes<CR>
+" Fix indent
+nnoremap << >>
+nnoremap >> << 
 " }}}
 
 "  --- UI CONFIG {{{
@@ -261,6 +270,9 @@ let g:vimtex_compiler_latexmk = {
     \   '-interaction=nonstopmode',
     \ ]
     \}
+" vim-notes
+let g:notes_directories = ['~/.nextCloud/Notes']
+let g:notes_suffix = '.md'
 " goyo.vim (fix color bug)
 autocmd! User GoyoLeave nested set bg=dark | colo base16-one-light
 " unimpared.vim
