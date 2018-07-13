@@ -125,9 +125,9 @@ bindsym $mod+o exec --no-startup-id rofi-pass
 
 # change focus
 bindsym $mod+j focus left
-bindsym $mod+k focus down
+bindsym $mod+odiaeresis focus down
 bindsym $mod+l focus up
-bindsym $mod+odiaeresis focus right
+bindsym $mod+k focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -137,9 +137,9 @@ bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
+bindsym $mod+Shift+odiaeresis move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+odiaeresis move right
+bindsym $mod+Shift+k move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
