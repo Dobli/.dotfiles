@@ -107,6 +107,7 @@ nnoremap <leader>uu :GundoToggle<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 " NERDCOmmenter Toggle
 nnoremap <leader># :call NERDComment(0, "toggle")<CR>
+vnoremap <leader># :call NERDComment(0, "toggle")<CR>
 inoremap <leader># <C-o>:call NERDComment(0,"toggle")<C-m>
 " upper/lower word
 nmap <leader>u mQviwU`Q
@@ -137,6 +138,7 @@ vmap <silent> ZZ <Plug>(SpellRotateBackwardV)
 " Make the C-] combination search for @tags:
 imap <C-,>ns :SearchNotes<CR>
 nmap <leader>ns :SearchNotes<CR>
+nmap <leader>no :Note 
 " Fix indent
 nnoremap << >>
 nnoremap >> << 
@@ -149,7 +151,7 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 "set t_Co=256
-set background=light
+"set background=light
 "let g:molokai_original = 1
 "let g:rehash256 = 1
 " show line numbers
@@ -224,7 +226,7 @@ let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=1
 " vim-airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16'
+let g:airline_theme='base16_eighties'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'

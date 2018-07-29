@@ -44,17 +44,8 @@ set_from_resource $magenta     color13    #000000
 set_from_resource $brown       color17    #000000
 
 set $border-color #2d2d2d
-set $bg-color #ffcc66
-set $text-color #393939
-set $in-bg-color #2d2d2d
-set $in-text-color #717578
 set $signal-bg-color #f2777a
 set $signal-text-color #3d3d3d
-set $indicator-color #DF293E
-
-## Bar colors
-set $bar-bg-color $black
-set $bar-text-color #e8e6df
 
 # Window colors
 #                       border          background         text                 indicator
@@ -258,7 +249,7 @@ bar {
                 separator $background
                 #                  border            background        text
                 focused_workspace  $blue             $blue             $background
-                active_workspace   $cyan             $cyan             $background
+                active_workspace   $background2      $background2      $foregorund
                 inactive_workspace $background       $background       $foreground
                 urgent_workspace   $red              $red              $background
         }

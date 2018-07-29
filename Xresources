@@ -10,39 +10,39 @@
 ! ------------------------------------------------------------------------------
 
 ! Base16 Eighties
-! #define base00 #2d2d2d
-! #define base01 #393939
-! #define base02 #515151
-! #define base03 #747369
-! #define base04 #a09f93
-! #define base05 #d3d0c8
-! #define base06 #e8e6df
-! #define base07 #f2f0ec
-! #define base08 #f2777a
-! #define base09 #f99157
-! #define base0A #ffcc66
-! #define base0B #99cc99
-! #define base0C #66cccc
-! #define base0D #6699cc
-! #define base0E #cc99cc
-! #define base0F #d27b53
+#define base00 #2d2d2d
+#define base01 #393939
+#define base02 #515151
+#define base03 #747369
+#define base04 #a09f93
+#define base05 #d3d0c8
+#define base06 #e8e6df
+#define base07 #f2f0ec
+#define base08 #f2777a
+#define base09 #f99157
+#define base0A #ffcc66
+#define base0B #99cc99
+#define base0C #66cccc
+#define base0D #6699cc
+#define base0E #cc99cc
+#define base0F #d27b53
 ! Base16 one light
-#define base00 #fafafa
-#define base01 #f0f0f1
-#define base02 #e5e5e6
-#define base03 #a0a1a7
-#define base04 #696c77
-#define base05 #383a42
-#define base06 #202227
-#define base07 #090a0b
-#define base08 #ca1243
-#define base09 #d75f00
-#define base0A #c18401
-#define base0B #50a14f
-#define base0C #0184bc
-#define base0D #4078f2
-#define base0E #a626a4
-#define base0F #986801
+! #define base00 #fafafa
+! #define base01 #f0f0f1
+! #define base02 #e5e5e6
+! #define base03 #a0a1a7
+! #define base04 #696c77
+! #define base05 #383a42
+! #define base06 #202227
+! #define base07 #090a0b
+! #define base08 #ca1243
+! #define base09 #d75f00
+! #define base0A #c18401
+! #define base0B #50a14f
+! #define base0C #0184bc
+! #define base0D #4078f2
+! #define base0E #a626a4
+! #define base0F #986801
 
 *pointerColorBackground:#2B2C2B
 *pointerColorForeground:#16A085
@@ -102,7 +102,8 @@ Xcursor.size:  0
 XTerm*background: base00
 XTerm*foreground: base05
 XTerm*reverseVideo: on
-XTerm*faceName: Terminus:size=11:antialias=true
+XTerm*faceName: Source Code Pro Medium:size=12:antialias=true
+UXTerm*faceName: Source Code Pro Medium:size=12:antialias=true
 XTerm*selectToClipboard: true
 
 ! ------------------------------------------------------------------------------
