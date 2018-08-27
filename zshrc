@@ -9,7 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 if [[ $(cat /etc/hostname) = 'dobler-desktop' ]]; then
     DEFAULT_USER='alexanderdobler'
 fi
-if [[ $(cat /etc/hostname) = 'unilaptop' ]]; then
+if [[ $(cat /etc/hostname) = 'hospitalwing' ]]; then
     DEFAULT_USER='alexander'
 fi
 
