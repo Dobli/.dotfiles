@@ -65,7 +65,10 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x4-15+50"
+    geometry = "0x4-25+60"
+
+    # corner radius in pixels
+    corner_radius = 8
     
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -142,13 +145,16 @@
     dmenu = /usr/bin/dmenu -p dunst:
     
     # Browser for opening urls in context menu.
-    browser = palemoon
+    browser = firefox
 
     # Align icons left/right/off
     icon_position = left
 
     # Paths to default icons.
     icon_folders = /usr/share/icons/Papirus/symbolic/status/:/usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+
+    # Max icon size
+    max_icon_size = 60
 
 [frame]
     width = 8

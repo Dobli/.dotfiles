@@ -110,7 +110,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id "rofi -show drun -modi 'drun,run,window' -window-format '{w:14}{c:16} {t}'"
 bindsym $mod+Shift+f exec --no-startup-id xdg-open "$(locate home | rofi -threads 0 -dmenu -i -p 'open')"
 bindsym $mod+Shift+x exec --no-startup-id gvim ~/.dotfiles/"$(ls ~/.dotfiles | rofi -threads 0 -dmenu -i -p 'config')"
-# bindsym $mod+Shift+t exec --no-startup-id translate_menu
+bindsym $mod+Shift+u exec --no-startup-id translate_menu
 bindsym $mod+Shift+t exec --no-startup-id todo done $(todo | rofi -threads 0 -dmenu -i -p 'todos' | cut -d '[' -f 1)
 bindsym $mod+o exec --no-startup-id rofi-pass
 
@@ -297,7 +297,7 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -f -b
 exec --no-startup-id evolution
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
-exec --no-startup-id pulseaudio --start
+#exec --no-startup-id pulseaudio --start
 exec --no-startup-id pa-applet
 #exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id sleep 1; blurlock; nextcloud

@@ -3,5 +3,5 @@
 text="$(xsel -o | rofi -dmenu -p " ")"
 if [ "$text" != '' ]
 then
-	python2 ~/.i3/scripts/dictmenu.py en de "$text" | rofi -dmenu -p " " | xsel -i -b
+	python2 ~/.dotfiles/bin/dictmenu.py en de "$text" | rofi -dmenu -p " " | xsel -i -b
 fi
