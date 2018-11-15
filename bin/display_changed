@@ -1,0 +1,11 @@
+#!/bin/sh
+
+USBC_STATUS=$(</sys/class/drm/card0/card0-DP-1/status )
+
+if [ "connected" == "$USBC_STATUS" ]; then
+  /home/alexander/.dotfiles/bin/display_extended
+else
+  /home/alexander/.dotfiles/bin/display_off
+  exit
+fi
+nitrogen --restore
