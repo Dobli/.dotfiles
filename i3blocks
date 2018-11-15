@@ -27,7 +27,7 @@
 command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
-color=#d3d0c8
+color=#2d2d2d
 
 #mpd client
 [mpd]

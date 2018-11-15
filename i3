@@ -25,6 +25,7 @@ for_window [class="mpv"] sticky enable;
 font pango:SourceCodeProMedium, FontAwesome5Free, FontAwesome5Brands 11
 
 # Define Xresource colors
+set $transparent #00000000
 set_from_resource $background  background #000000
 set_from_resource $background2 color18    #000000
 set_from_resource $background3 color19    #000000
@@ -236,22 +237,22 @@ bindsym $mod+r mode "resize"
 #  ----- Statusbars {{{
 # Top bar
 bar {
-	height 35
-	tray_output None
-	tray_padding 4
-        i3bar_command i3bar 
-        status_command i3blocks
+    height 35
+    tray_output None
+    tray_padding 4
+    i3bar_command i3bar -t 
+    status_command i3blocks
 
 	font pango:SourceCodeProMedium, FontAwesome5Free, FontAwesome5Brands 11
 	position top
 	colors {
-                background $background
+                background $transparent
                 separator $background
                 #                  border            background        text
-                focused_workspace  $blue             $blue             $background
-                active_workspace   $background2      $background2      $foregorund
-                inactive_workspace $background       $background       $foreground
-                urgent_workspace   $red              $red              $background
+                focused_workspace  $transparent      $transparent      $background
+                active_workspace   $transparent      $transparent      $background2 
+                inactive_workspace $transparent      $transparent      $background3
+                urgent_workspace   $transparent      $transparent      $yellow
         }
 }
 # }}}
