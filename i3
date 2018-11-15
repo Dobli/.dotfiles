@@ -239,19 +239,19 @@ bar {
 	height 35
 	tray_output None
 	tray_padding 4
-        i3bar_command i3bar 
+        i3bar_command i3bar -t 
         status_command i3blocks
 
 	font pango:SourceCodeProMedium, FontAwesome5Free, FontAwesome5Brands 11
 	position top
 	colors {
-                background $background
+                background #00000000
                 separator $background
                 #                  border            background        text
-                focused_workspace  $blue             $blue             $background
-                active_workspace   $background2      $background2      $foregorund
-                inactive_workspace $background       $background       $foreground
-                urgent_workspace   $red              $red              $background
+                focused_workspace  #00000000         #00000000         $background
+                active_workspace   #00000000         #00000000         $background2 
+                inactive_workspace #00000000         #00000000         $background3
+                urgent_workspace   #00000000         #00000000         $yellow
         }
 }
 # }}}
